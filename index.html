@@ -89,7 +89,7 @@
                 <a href="#events" class="hover:text-rosegold transition-colors duration-200">Events</a>
                 <a href="#gallery" class="hover:text-rosegold transition-colors duration-200">Gallery</a>
                 <a href="#details" class="hover:text-rosegold transition-colors duration-200">Info</a>
-                <a href="#rsvp" class="text-rosegold font-semibold border-b-2 border-rosegold pb-0.5 hover:text-gold hover:border-gold transition-colors">RSVP</a>
+                <!-- <a href="#rsvp" class="text-rosegold font-semibold border-b-2 border-rosegold pb-0.5 hover:text-gold hover:border-gold transition-colors">RSVP</a> -->
             </div>
 
             <!-- Mobile Menu Toggle Button -->
@@ -338,7 +338,7 @@
         <!-- Grid of Photos -->
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             <div class="relative overflow-hidden rounded-xl shadow-md group cursor-pointer border border-gold/20 aspect-square" onclick="openLightbox('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200', 'Moments of Pure Joy')">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600" alt="Gallery Photo 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <img src="/1.png" alt="Gallery Photo 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
                     <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
                 </div>
@@ -454,76 +454,6 @@
     </section>
 
     <!-- RSVP SECTION -->
-    <section id="rsvp" class="py-20 px-4 max-w-3xl mx-auto">
-        <div class="bg-white p-8 sm:p-12 rounded-3xl border-2 border-gold/40 shadow-2xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 translate-x-8 -translate-y-8 w-32 h-32 bg-rosegold/10 rounded-full pointer-events-none"></div>
-            
-            <div class="text-center mb-10">
-                <span class="font-script text-3xl text-rosegold">Join Us</span>
-                <h2 class="font-serif text-4xl text-charcoal font-normal mt-1">RSVP</h2>
-                <p class="text-warmgray text-sm mt-2">Please reply by September 1, 2027</p>
-                <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
-            </div>
-
-            <form id="rsvpForm" onsubmit="handleRSVP(event)" class="space-y-6">
-                <!-- Full Name -->
-                <div>
-                    <label for="fullName" class="block font-serif text-sm font-medium text-charcoal mb-1">Full Name *</label>
-                    <input type="text" id="fullName" required placeholder="e.g. Jane & John Doe" class="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-rosegold focus:ring-1 focus:ring-rosegold outline-none transition text-sm">
-                </div>
-
-                <!-- Email -->
-                <div>
-                    <label for="email" class="block font-serif text-sm font-medium text-charcoal mb-1">Email Address *</label>
-                    <input type="email" id="email" required placeholder="your.email@example.com" class="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-rosegold focus:ring-1 focus:ring-rosegold outline-none transition text-sm">
-                </div>
-
-                <!-- Attendance Selection -->
-                <div>
-                    <label class="block font-serif text-sm font-medium text-charcoal mb-2">Will you be attending? *</label>
-                    <div class="grid grid-cols-2 gap-4">
-                        <label class="flex items-center justify-center p-3 border border-gold/30 rounded-lg cursor-pointer hover:bg-blush transition text-sm font-medium text-charcoal">
-                            <input type="radio" name="attendance" value="attending" checked class="accent-rosegold mr-2" onchange="toggleGuestFields(true)">
-                            Joyfully Accept
-                        </label>
-                        <label class="flex items-center justify-center p-3 border border-gold/30 rounded-lg cursor-pointer hover:bg-blush transition text-sm font-medium text-charcoal">
-                            <input type="radio" name="attendance" value="declining" class="accent-rosegold mr-2" onchange="toggleGuestFields(false)">
-                            Regretfully Decline
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Guest Count & Details (Show/Hide conditionally) -->
-                <div id="guestSection" class="space-y-6">
-                    <div>
-                        <label for="guestCount" class="block font-serif text-sm font-medium text-charcoal mb-1">Number of Guests Attending *</label>
-                        <select id="guestCount" class="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-rosegold focus:ring-1 focus:ring-rosegold outline-none transition text-sm">
-                            <option value="1">1 Guest (Just Me)</option>
-                            <option value="2">2 Guests (+ Plus One)</option>
-                            <option value="3">3 Guests</option>
-                            <option value="4">4 Guests (Family)</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="dietary" class="block font-serif text-sm font-medium text-charcoal mb-1">Dietary Restrictions or Special Preferences</label>
-                        <input type="text" id="dietary" placeholder="e.g., Vegetarian, Gluten-Free, Allergies" class="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-rosegold focus:ring-1 focus:ring-rosegold outline-none transition text-sm">
-                    </div>
-                </div>
-
-                <!-- Song Request / Message -->
-                <div>
-                    <label for="message" class="block font-serif text-sm font-medium text-charcoal mb-1">Message for the Couple / Song Request</label>
-                    <textarea id="message" rows="3" placeholder="Leave a note or suggest a dance song..." class="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-rosegold focus:ring-1 focus:ring-rosegold outline-none transition text-sm"></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="w-full py-4 bg-rosegold hover:bg-rosegold/90 text-white font-serif text-lg tracking-wide rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                    Send Response
-                </button>
-            </form>
-        </div>
-    </section>
 
     <!-- RSVP SUCCESS MODAL -->
     <div id="rsvpModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
