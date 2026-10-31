@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gowtham & Jhansi | We're Getting Married!</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rosegold: '#B76E79',
+                        blush: '#FDF7F7',
+                        gold: '#D4AF37',
+                        champagne: '#F7E7CE',
+                        charcoal: '#2D2D2D',
+                        softgold: '#E5C158',
+                        warmgray: '#7A7A7A'
+                    },
+                    fontFamily: {
+                        script: ['"Alex Brush"', 'cursive'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Styles & Subtle Animations */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .gold-border {
+            border-image: linear-gradient(to right, #D4AF37, #F7E7CE, #D4AF37) 1;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #996515 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .bg-pattern {
+            background-color: #fdf7f7;
+            background-image: radial-gradient(#d4af37 0.5px, transparent 0.5px), radial-gradient(#d4af37 0.5px, #fdf7f7 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0,10px 10px;
+            background-opacity: 0.1;
+        }
+
+        /* Modal transitions */
+        .modal-active {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="font-sans text-charcoal bg-blush antialiased selection:bg-rosegold selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 bg-white/80 backdrop-blur-md shadow-sm border-b border-gold/10">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="font-script text-3xl md:text-4xl text-rosegold font-bold hover:opacity-80 transition">G & J</a>
+            
+            <!-- Desktop Nav Menu -->
+            <div class="hidden md:flex space-x-8 font-serif text-lg tracking-wide uppercase text-charcoal/80">
+                <a href="#home" class="hover:text-rosegold transition-colors duration-200">Home</a>
+                <a href="#story" class="hover:text-rosegold transition-colors duration-200">Our Story</a>
+                <a href="#events" class="hover:text-rosegold transition-colors duration-200">Events</a>
+                <a href="#gallery" class="hover:text-rosegold transition-colors duration-200">Gallery</a>
+                <a href="#details" class="hover:text-rosegold transition-colors duration-200">Info</a>
+                <a href="#rsvp" class="text-rosegold font-semibold border-b-2 border-rosegold pb-0.5 hover:text-gold hover:border-gold transition-colors">RSVP</a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-charcoal focus:outline-none" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-gold/20 px-6 py-6 transition-all space-y-4 font-serif text-center text-xl">
+            <a href="#home" class="block py-2 border-b border-gray-100 mobile-nav-link">Home</a>
+            <a href="#story" class="block py-2 border-b border-gray-100 mobile-nav-link">Our Story</a>
+            <a href="#events" class="block py-2 border-b border-gray-100 mobile-nav-link">Events & Schedule</a>
+            <a href="#gallery" class="block py-2 border-b border-gray-100 mobile-nav-link">Gallery</a>
+            <a href="#details" class="block py-2 border-b border-gray-100 mobile-nav-link">Stay & Registry</a>
+            <a href="#rsvp" class="block py-2 text-rosegold font-bold mobile-nav-link">RSVP Now</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white text-center relative px-4 pt-20">
+        <div class="max-w-4xl mx-auto py-12 px-6 rounded-2xl glass-card text-charcoal border-2 border-gold/30 shadow-2xl my-8">
+            <p class="font-serif italic text-lg md:text-2xl text-rosegold mb-2 tracking-wider">Together with their families</p>
+            
+            <h1 class="font-script text-6xl sm:text-7xl md:text-8xl text-rosegold my-2 leading-tight drop-shadow-sm">
+                Gowtham <span class="font-serif text-4xl sm:text-5xl text-gold font-light">&amp;</span> Jhansi
+            </h1>
+            
+            <p class="font-serif uppercase tracking-[0.2em] text-sm md:text-base my-4 text-warmgray border-y border-gold/30 py-3 max-w-md mx-auto">
+                Are Getting Married
+            </p>
+
+            <p class="font-serif text-xl sm:text-2xl md:text-3xl font-semibold text-charcoal mt-4">
+                November 18, 2026
+            </p>
+            <p class="text-sm md:text-base font-light text-warmgray mt-1">
+                <i class="fa-solid fa-location-dot text-rosegold mr-1"></i> KVNR Gardens, Inkollu
+            </p>
+
+            <!-- COUNTDOWN TIMER -->
+            <div class="mt-8 pt-6 border-t border-gold/20">
+                <p class="font-serif italic text-sm text-warmgray mb-4">Counting down to the big day:</p>
+                <div id="countdown" class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
+                    <div class="bg-blush/80 p-3 rounded-lg border border-gold/20 shadow-sm">
+                        <span id="days" class="block font-serif text-2xl sm:text-4xl font-bold text-rosegold">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-warmgray">Days</span>
+                    </div>
+                    <div class="bg-blush/80 p-3 rounded-lg border border-gold/20 shadow-sm">
+                        <span id="hours" class="block font-serif text-2xl sm:text-4xl font-bold text-rosegold">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-warmgray">Hours</span>
+                    </div>
+                    <div class="bg-blush/80 p-3 rounded-lg border border-gold/20 shadow-sm">
+                        <span id="minutes" class="block font-serif text-2xl sm:text-4xl font-bold text-rosegold">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-warmgray">Mins</span>
+                    </div>
+                    <div class="bg-blush/80 p-3 rounded-lg border border-gold/20 shadow-sm">
+                        <span id="seconds" class="block font-serif text-2xl sm:text-4xl font-bold text-rosegold">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-warmgray">Secs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#rsvp" class="w-full sm:w-auto px-8 py-3 bg-rosegold hover:bg-rosegold/90 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-envelope-open-text mr-2"></i> RSVP Now
+                </a>
+                <a href="#events" class="w-full sm:w-auto px-8 py-3 bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-white font-medium rounded-full shadow transition duration-300">
+                    <i class="fa-solid fa-calendar-days mr-2"></i> View Schedule
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STORY SECTION -->
+    <section id="story" class="py-20 px-4 max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="font-script text-3xl text-rosegold">Love Story</span>
+            <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-normal mt-1">How We Met</h2>
+            <div class="w-24 h-0.5 bg-gold mx-auto mt-4"></div>
+        </div>
+
+        <div class="relative border-l-2 border-gold/40 md:border-l-0 md:before:absolute md:before:left-1/2 md:before:top-0 md:before:bottom-0 md:before:w-0.5 md:before:bg-gold/40 space-y-12">
+            
+            <!-- Timeline Item 1 -->
+            <div class="relative pl-8 md:pl-0 md:flex items-center justify-between group">
+                <div class="absolute -left-[9px] md:left-1/2 md:-translate-x-[9px] top-1.5 w-4 h-4 rounded-full bg-rosegold border-4 border-blush z-10"></div>
+                <div class="md:w-5/12 text-left md:text-right pr-0 md:pr-8 mb-4 md:mb-0">
+                    <span class="font-serif text-sm tracking-widest uppercase text-gold font-bold">September 2021</span>
+                    <h3 class="font-serif text-2xl text-charcoal font-semibold mt-1">First Encounter</h3>
+                    <p class="text-warmgray font-light text-sm mt-2 leading-relaxed">
+                        We crossed paths at a cozy coffee shop in San Francisco on a rainy Tuesday. Ethan ordered an extra espresso, dropped his books, and Aria helped pick them up. One cup of coffee turned into hours of conversation.
+                    </p>
+                </div>
+                <div class="md:w-5/12 pl-0 md:pl-8">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop" alt="First encounter" class="rounded-lg shadow-md hover:shadow-xl transition duration-300 w-full h-56 object-cover border border-gold/20">
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="relative pl-8 md:pl-0 md:flex items-center justify-between group md:flex-row-reverse">
+                <div class="absolute -left-[9px] md:left-1/2 md:-translate-x-[9px] top-1.5 w-4 h-4 rounded-full bg-rosegold border-4 border-blush z-10"></div>
+                <div class="md:w-5/12 text-left pl-0 md:pl-8 mb-4 md:mb-0">
+                    <span class="font-serif text-sm tracking-widest uppercase text-gold font-bold">June 2023</span>
+                    <h3 class="font-serif text-2xl text-charcoal font-semibold mt-1">Our First Trip Together</h3>
+                    <p class="text-warmgray font-light text-sm mt-2 leading-relaxed">
+                        Traveling through the coastal beauty of Amalfi, Italy, we fell in love with new cultures, delicious food, and most importantly, spending every waking moment exploring life together.
+                    </p>
+                </div>
+                <div class="md:w-5/12 pr-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=800&auto=format&fit=crop" alt="First Trip" class="rounded-lg shadow-md hover:shadow-xl transition duration-300 w-full h-56 object-cover border border-gold/20">
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="relative pl-8 md:pl-0 md:flex items-center justify-between group">
+                <div class="absolute -left-[9px] md:left-1/2 md:-translate-x-[9px] top-1.5 w-4 h-4 rounded-full bg-rosegold border-4 border-blush z-10"></div>
+                <div class="md:w-5/12 text-left md:text-right pr-0 md:pr-8 mb-4 md:mb-0">
+                    <span class="font-serif text-sm tracking-widest uppercase text-gold font-bold">December 2025</span>
+                    <h3 class="font-serif text-2xl text-charcoal font-semibold mt-1">The Proposal</h3>
+                    <p class="text-warmgray font-light text-sm mt-2 leading-relaxed">
+                        Under a blanket of stars at Big Sur during sunset, Ethan asked the most important question of his life. With happy tears and joyous laughter, Aria said YES!
+                    </p>
+                </div>
+                <div class="md:w-5/12 pl-0 md:pl-8">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800&auto=format&fit=crop" alt="The Proposal" class="rounded-lg shadow-md hover:shadow-xl transition duration-300 w-full h-56 object-cover border border-gold/20">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EVENTS & SCHEDULE SECTION -->
+    <section id="events" class="py-20 bg-white border-y border-gold/20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="font-script text-3xl text-rosegold">Celebration</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-normal mt-1">Events &amp; Schedule</h2>
+                <div class="w-24 h-0.5 bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Event 1: Welcome / Sangeet -->
+                <div class="bg-blush p-8 rounded-2xl border border-gold/30 text-center flex flex-col justify-between hover:shadow-xl transition duration-300">
+                    <div>
+                        <div class="w-16 h-16 bg-rosegold/10 text-rosegold rounded-full flex items-center justify-center mx-auto text-2xl mb-4">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-charcoal font-semibold">Haldi &amp; Pellikoduku</h3>
+                        <p class="font-serif text-rosegold italic text-sm mt-1">Music, Drinks &amp; Celebration</p>
+                        <p class="text-xs uppercase tracking-widest text-gold font-semibold mt-4">Wednesday, Nov 18, 2026</p>
+                        <p class="text-sm font-medium text-charcoal mt-1"><i class="fa-regular fa-clock mr-1 text-rosegold"></i> 6:00 AM – 8:00 AM</p>
+                        <p class="text-sm text-warmgray mt-3 font-light">
+                            Join us for an evening of music, dancing, and welcoming speeches to kick off our wedding weekend.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gold/20">
+                        <p class="text-xs font-semibold uppercase text-warmgray">Venue</p>
+                        <p class="text-sm text-charcoal">The Sunset Pavilion, Napa</p>
+                        <p class="text-xs text-rosegold mt-1 italic">Dress Code: Festive / Cocktail</p>
+                    </div>
+                </div>
+
+                <!-- Event 2: The Main Ceremony -->
+                <div class="bg-blush p-8 rounded-2xl border-2 border-gold text-center flex flex-col justify-between hover:shadow-2xl transition duration-300 relative transform md:-translate-y-2">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-white text-[10px] uppercase font-bold tracking-widest px-4 py-1 rounded-full">
+                        Main Event
+                    </div>
+                    <div>
+                        <div class="w-16 h-16 bg-gold/20 text-gold rounded-full flex items-center justify-center mx-auto text-2xl mb-4">
+                            <i class="fa-solid fa-rings-wedding"></i>
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-charcoal font-semibold">Wedding Ceremony</h3>
+                        <p class="font-serif text-rosegold italic text-sm mt-1">Exchange of Vows</p>
+                        <p class="text-xs uppercase tracking-widest text-gold font-semibold mt-4">Wednesday, Nov 18, 2026</p>
+                        <p class="text-sm font-medium text-charcoal mt-1"><i class="fa-regular fa-clock mr-1 text-rosegold"></i> 10:00 PM </p>
+                        <p class="text-sm text-warmgray mt-3 font-light">
+                            Witness our holy union in an outdoor ceremony nestled amidst the beautiful vineyards.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gold/20">
+                        <p class="text-xs font-semibold uppercase text-warmgray">Venue</p>
+                        <p class="text-sm text-charcoal">The Grand Lawn, Napa Valley Resort</p>
+                        <p class="text-xs text-rosegold mt-1 italic">Dress Code: Formal / Black Tie Optional</p>
+                    </div>
+                </div>
+
+                <!-- Event 3: The Reception -->
+                <div class="bg-blush p-8 rounded-2xl border border-gold/30 text-center flex flex-col justify-between hover:shadow-xl transition duration-300">
+                    <div>
+                        <div class="w-16 h-16 bg-rosegold/10 text-rosegold rounded-full flex items-center justify-center mx-auto text-2xl mb-4">
+                            <i class="fa-solid fa-wine-glass-sparkles"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-charcoal font-semibold">The Reception</h3>
+                        <p class="font-serif text-rosegold italic text-sm mt-1">Lunch</p>
+                        <p class="text-xs uppercase tracking-widest text-gold font-semibold mt-4">Friday, Nov 20, 2026</p>
+                        <p class="text-sm font-medium text-charcoal mt-1"><i class="fa-regular fa-clock mr-1 text-rosegold"></i> 10:00 AM OnWards</p>
+                        <p class="text-sm text-warmgray mt-3 font-light">
+                            Celebrate with gourmet dining, champagne toasts, live music band, and late-night dancing!
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gold/20">
+                        <p class="text-xs font-semibold uppercase text-warmgray">Venue</p>
+                        <p class="text-sm text-charcoal">The Crystal Ballroom</p>
+                        <p class="text-xs text-rosegold mt-1 italic">Dress Code: Formal Attire</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Map Location Interactive Frame -->
+            <div class="mt-16 bg-blush p-4 md:p-6 rounded-2xl border border-gold/30 shadow-md">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                    <div>
+                        <h4 class="font-serif text-2xl text-charcoal">Venue Location</h4>
+                        <p class="text-sm text-warmgray">The Grand Palace Resort &amp; Spa, 1200 Vineyard Way, Napa, CA</p>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="mt-2 md:mt-0 px-5 py-2 bg-rosegold text-white text-xs uppercase tracking-wider rounded-full hover:bg-rosegold/90 transition">
+                        <i class="fa-solid fa-diamond-turn-right mr-1"></i> Get Directions
+                    </a>
+                </div>
+                <div class="w-full h-72 rounded-xl overflow-hidden shadow-inner border border-gold/20">
+                    <iframe 
+                        title="Wedding Venue Location Map" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100000!2d-122.2868!3d38.2975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80850625d97f5195%3A0x6b17c2f0f49fae0!2sNapa%20Valley!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                        class="w-full h-full border-0" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHOTO GALLERY SECTION -->
+    <section id="gallery" class="py-20 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="font-script text-3xl text-rosegold">Memories</span>
+            <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-normal mt-1">Photo Gallery</h2>
+            <div class="w-24 h-0.5 bg-gold mx-auto mt-4"></div>
+            <p class="text-warmgray text-sm mt-3">Click on any photo to expand</p>
+        </div>
+
+        <!-- Grid of Photos -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            <div class="relative overflow-hidden rounded-xl shadow-md group cursor-pointer border border-gold/20 aspect-square" onclick="openLightbox('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200', 'Moments of Pure Joy')">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600" alt="Gallery Photo 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-xl shadow-md group cursor-pointer border border-gold/20 aspect-square" onclick="openLightbox('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200', 'Celebration with Loved Ones')">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600" alt="Gallery Photo 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-xl shadow-md group cursor-pointer border border-gold/20 aspect-square" onclick="openLightbox('https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200', 'Ring Ceremony')">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600" alt="Gallery Photo 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-xl shadow-md group cursor-pointer border border-gold/20 aspect-square" onclick="openLightbox('https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200', 'A Romantic Stroll')">
+                <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=600" alt="Gallery Photo 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-xl shadow-md group cursor-pointer border border-gold/20 aspect-square" onclick="openLightbox('https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=1200', 'Sunset Walk')">
+                <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=600" alt="Gallery Photo 5" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-xl shadow-md group cursor-pointer border border-gold/20 aspect-square" onclick="openLightbox('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=1200', 'Flower & Decor Details')">
+                <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=600" alt="Gallery Photo 6" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl hover:text-rosegold transition focus:outline-none">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl max-h-[90vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Enlarged photo" class="max-h-[80vh] max-w-full rounded-lg shadow-2xl object-contain">
+            <p id="lightbox-caption" class="text-white font-serif text-lg mt-4 text-center"></p>
+        </div>
+    </div>
+
+    <!-- ACCOMMODATION & REGISTRY SECTION -->
+    <section id="details" class="py-20 bg-white border-y border-gold/20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Accommodation Box -->
+                <div class="bg-blush p-8 rounded-2xl border border-gold/30 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-rosegold text-3xl mb-3"><i class="fa-solid fa-hotel"></i></div>
+                        <h3 class="font-serif text-3xl text-charcoal">Accommodations</h3>
+                        <p class="text-warmgray text-sm mt-3 leading-relaxed">
+                            We have reserved a block of rooms at special discounted rates for our wedding guests at <strong>The Grand Palace Resort</strong> and nearby hotels.
+                        </p>
+                        <ul class="mt-6 space-y-3 text-sm text-charcoal">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-gold mt-1 mr-2"></i>
+                                <span><strong>The Grand Palace Resort:</strong> Use code <code>ARIAETHAN2027</code> for 20% off.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-gold mt-1 mr-2"></i>
+                                <span><strong>Napa Valley Lodge:</strong> 10 mins away from the venue. Shuttle service available.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8">
+                        <a href="#" class="inline-block px-6 py-2.5 bg-rosegold text-white text-xs uppercase tracking-wider font-semibold rounded-full hover:bg-rosegold/90 transition">
+                            Book Hotel Room
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Gift Registry Box -->
+                <div class="bg-blush p-8 rounded-2xl border border-gold/30 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-gold text-3xl mb-3"><i class="fa-solid fa-gift"></i></div>
+                        <h3 class="font-serif text-3xl text-charcoal">Gift Registry</h3>
+                        <p class="text-warmgray text-sm mt-3 leading-relaxed">
+                            Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, we have registered at the following places for our new home &amp; honeymoon fund:
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mt-6 text-center">
+                            <a href="#" class="p-4 bg-white rounded-xl border border-gold/20 hover:border-gold transition shadow-sm font-serif text-charcoal font-semibold">
+                                Crate &amp; Barrel
+                            </a>
+                            <a href="#" class="p-4 bg-white rounded-xl border border-gold/20 hover:border-gold transition shadow-sm font-serif text-charcoal font-semibold">
+                                Target Registry
+                            </a>
+                            <a href="#" class="p-4 bg-white rounded-xl border border-gold/20 hover:border-gold transition shadow-sm font-serif text-charcoal font-semibold">
+                                Pottery Barn
+                            </a>
+                            <a href="#" class="p-4 bg-white rounded-xl border border-gold/20 hover:border-gold transition shadow-sm font-serif text-charcoal font-semibold">
+                                Honeymoon Fund
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-xs text-warmgray italic mt-6 text-center">Thank you for helping us start our next chapter!</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP SECTION -->
+    <section id="rsvp" class="py-20 px-4 max-w-3xl mx-auto">
+        <div class="bg-white p-8 sm:p-12 rounded-3xl border-2 border-gold/40 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 translate-x-8 -translate-y-8 w-32 h-32 bg-rosegold/10 rounded-full pointer-events-none"></div>
+            
+            <div class="text-center mb-10">
+                <span class="font-script text-3xl text-rosegold">Join Us</span>
+                <h2 class="font-serif text-4xl text-charcoal font-normal mt-1">RSVP</h2>
+                <p class="text-warmgray text-sm mt-2">Please reply by September 1, 2027</p>
+                <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <form id="rsvpForm" onsubmit="handleRSVP(event)" class="space-y-6">
+                <!-- Full Name -->
+                <div>
+                    <label for="fullName" class="block font-serif text-sm font-medium text-charcoal mb-1">Full Name *</label>
+                    <input type="text" id="fullName" required placeholder="e.g. Jane & John Doe" class="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-rosegold focus:ring-1 focus:ring-rosegold outline-none transition text-sm">
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block font-serif text-sm font-medium text-charcoal mb-1">Email Address *</label>
+                    <input type="email" id="email" required placeholder="your.email@example.com" class="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-rosegold focus:ring-1 focus:ring-rosegold outline-none transition text-sm">
+                </div>
+
+                <!-- Attendance Selection -->
+                <div>
+                    <label class="block font-serif text-sm font-medium text-charcoal mb-2">Will you be attending? *</label>
+                    <div class="grid grid-cols-2 gap-4">
+                        <label class="flex items-center justify-center p-3 border border-gold/30 rounded-lg cursor-pointer hover:bg-blush transition text-sm font-medium text-charcoal">
+                            <input type="radio" name="attendance" value="attending" checked class="accent-rosegold mr-2" onchange="toggleGuestFields(true)">
+                            Joyfully Accept
+                        </label>
+                        <label class="flex items-center justify-center p-3 border border-gold/30 rounded-lg cursor-pointer hover:bg-blush transition text-sm font-medium text-charcoal">
+                            <input type="radio" name="attendance" value="declining" class="accent-rosegold mr-2" onchange="toggleGuestFields(false)">
+                            Regretfully Decline
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Guest Count & Details (Show/Hide conditionally) -->
+                <div id="guestSection" class="space-y-6">
+                    <div>
+                        <label for="guestCount" class="block font-serif text-sm font-medium text-charcoal mb-1">Number of Guests Attending *</label>
+                        <select id="guestCount" class="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-rosegold focus:ring-1 focus:ring-rosegold outline-none transition text-sm">
+                            <option value="1">1 Guest (Just Me)</option>
+                            <option value="2">2 Guests (+ Plus One)</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests (Family)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="dietary" class="block font-serif text-sm font-medium text-charcoal mb-1">Dietary Restrictions or Special Preferences</label>
+                        <input type="text" id="dietary" placeholder="e.g., Vegetarian, Gluten-Free, Allergies" class="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-rosegold focus:ring-1 focus:ring-rosegold outline-none transition text-sm">
+                    </div>
+                </div>
+
+                <!-- Song Request / Message -->
+                <div>
+                    <label for="message" class="block font-serif text-sm font-medium text-charcoal mb-1">Message for the Couple / Song Request</label>
+                    <textarea id="message" rows="3" placeholder="Leave a note or suggest a dance song..." class="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-rosegold focus:ring-1 focus:ring-rosegold outline-none transition text-sm"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-4 bg-rosegold hover:bg-rosegold/90 text-white font-serif text-lg tracking-wide rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    Send Response
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- RSVP SUCCESS MODAL -->
+    <div id="rsvpModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white max-w-md w-full p-8 rounded-2xl border-2 border-gold text-center shadow-2xl relative transform transition-all">
+            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto text-3xl mb-4">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <h3 class="font-serif text-3xl text-charcoal">Thank You!</h3>
+            <p id="rsvpModalMessage" class="text-warmgray text-sm mt-3 leading-relaxed">
+                Your response has been recorded. We can't wait to celebrate with you!
+            </p>
+            <button onclick="closeRSVPModal()" class="mt-6 px-8 py-2.5 bg-rosegold text-white font-medium rounded-full hover:bg-rosegold/90 transition text-sm">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-charcoal text-white/80 py-12 text-center border-t border-gold/20">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="font-script text-5xl text-rosegold mb-2">Gowtham &amp; Jhansi</h2>
+            <p class="font-serif text-sm tracking-widest text-gold uppercase mb-6">11.18.2026 • Napa Valley, California</p>
+            <div class="flex justify-center space-x-6 text-lg text-gold/80 mb-6">
+                <a href="#home" class="hover:text-white transition"><i class="fa-solid fa-heart"></i></a>
+                <a href="#gallery" class="hover:text-white transition"><i class="fa-solid fa-camera"></i></a>
+                <a href="#rsvp" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p class="text-xs text-warmgray">&copy; 2026 Gowtham &amp; Jhansi's Wedding Website. Designed with love.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Countdown Timer
+        const weddingDate = new Date("November 18, 2026 20:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<p class='font-serif text-2xl text-rosegold col-span-4'>Today is the Big Day!</p>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 3. Photo Lightbox Modal
+        function openLightbox(imgSrc, caption) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox-caption').innerText = caption;
+            document.getElementById('lightbox').classList.remove('hidden');
+            document.body.classList.add('modal-active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+            document.body.classList.remove('modal-active');
+        }
+
+        // Close Lightbox on outside click
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // 4. RSVP Conditional Guest Form Fields
+        function toggleGuestFields(isAttending) {
+            const guestSection = document.getElementById('guestSection');
+            if (isAttending) {
+                guestSection.classList.remove('hidden');
+            } else {
+                guestSection.classList.add('hidden');
+            }
+        }
+
+        // 5. RSVP Form Handler & Local State Modal
+        function handleRSVP(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('fullName').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked').value;
+            const modalMessage = document.getElementById('rsvpModalMessage');
+
+            if (attendance === 'attending') {
+                const guestCount = document.getElementById('guestCount').value;
+                modalMessage.innerHTML = `Dear <strong>${fullName}</strong>, thank you for confirming your attendance for <strong>${guestCount} guest(s)</strong>! We are thrilled to celebrate with you on November 20, 2026.`;
+            } else {
+                modalMessage.innerHTML = `Dear <strong>${fullName}</strong>, thank you for letting us know. We will miss you dearly on our special day!`;
+            }
+
+            // Show Confirmation Modal
+            document.getElementById('rsvpModal').classList.remove('hidden');
+            document.body.classList.add('modal-active');
+
+            // Reset form
+            document.getElementById('rsvpForm').reset();
+            toggleGuestFields(true);
+        }
+
+        function closeRSVPModal() {
+            document.getElementById('rsvpModal').classList.add('hidden');
+            document.body.classList.remove('modal-active');
+        }
+    </script>
+</body>
+</html>
